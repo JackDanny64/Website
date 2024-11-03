@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    background: url(pic/1.webp);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.navbar {
+    width: 86%;
+    display: flex;
+    margin: auto;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    width: 160px;
+    cursor: pointer;
+    margin-top: -1%;
+    margin-left: -2%;
+}
+
+ul {
+    margin-top: -4%; /* Consider removing or adjusting this for better layout */
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 16px;
+}
+
+ul li a {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-top: -3%;
+    transition: .4s ease;
+}
+
+ul li a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.info {
+    margin-left: 7%;
+    margin-top: 6%;
+}
+
+.info h1 {
+    font-size: 65px;
+    color: rgb(0, 0, 0);
+}
+
+.info h3 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 24px;
+}
+
+.info span {
+    color: rgb(255, 255, 255);
+}
+
+.info a {
+    text-decoration: none;
+    color: #fff;
+    background: rgb(36,32,30);
+    margin: 26px 0;
+    padding: 10px 18px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: .4s ease;
+}
+
+.info a:hover {
+    background: rgb(0, 0, 0);
+}
+
+.image {
+    width: 30%;
+    height: 60%;
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+}
+
+.image img {
+    position: absolute;
+    height: 140%;
+    left: 40%;
+    transform: translate(-55%);
+    bottom: 0;
+    transition: left 2s ease;
+}
+
+.image:hover .Corbin {
+    left: 55%;
+}
+
+.icons i {
+    font-size: 40px;
+    margin-left: 7%;
+    color: #000000;
+    transition: .4s ease;
+}
+
+.icons i:hover {
+    color: rgb(255, 255, 255);
+}
+
+ul li a.active {
+    color: rgb(0, 0, 0);
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.icons a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.icons a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #4c4646;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Prevents interfering with hover */
+}
+
+.icons a:hover::after {
+    opacity: 1;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease; /* Adjust duration as needed */
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
+/* Skills specific styles */
+.info ul {
+    list-style-type: disc; /* Ensure bullets are shown */
+    padding-left: 20px; /* Add some padding to align bullets */
+    margin-top: 10px; /* Add space above the list */
+}
+
+.info ul li {
+    margin: 5px 0; /* Space between bullet points */
+    color: #ffffff; /* Ensure text color is white for visibility */
+}

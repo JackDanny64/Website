@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Get to Know Me</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="main fade-in">
+        <div class="navbar">
+            <img src="pic/CM PRODUCTIONS TRANSPARENT.png" class="logo">
+
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html" class="active">GET TO KNOW ME</a></li>
+                <li><a href="skills.html">SKILLS</a></li>
+                <li><a href="works.html">MY WORKS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h1><span>A</span>bout <span>M</span>e<br></h1>
+            <p>Here you can add details about yourself.</p>
+        </div>
+    </div>
+
+    <script>
+        // Fade-in effect on page load
+        window.addEventListener('load', () => {
+            document.querySelector('.main').classList.add('show');
+        });
+
+        // Fade-out effect on navigation
+        document.querySelectorAll('.navbar ul li a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent immediate navigation
+                const target = this.getAttribute('href');
+                
+                document.querySelector('.main').classList.remove('show'); // Remove the fade-in class
+                document.querySelector('.main').classList.add('fade-out'); // Apply fade-out class
+
+                setTimeout(() => {
+                    window.location.href = target; // Navigate to the target page after fade-out
+                }, 500); // Match the delay to CSS transition duration
+            });
+        });
+    </script>
+</body>
+</html>
