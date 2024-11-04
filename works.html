@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My Works</title> <!-- Updated title -->
+    <title>My Works</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <div class="main fade-in"> <!-- Added fade-in class -->
+    <div class="main fade-in">
         <div class="navbar">
             <img src="pic/CM PRODUCTIONS TRANSPARENT.png" class="logo">
-
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">GET TO KNOW ME</a></li>
@@ -22,31 +21,78 @@
         </div>
 
         <div class="info">
-            <h1><span>M</span>y <span>W</span>orks<br></h1>
-            <p>Here you can showcase your projects and works.</p> <!-- Updated content -->
+            <h1><span>M</span>y <span>W</span>orks</h1>
+            <p>Here are some of my works.</p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery">
+            <div class="gallery-item"><img src="pic/untitled.png" alt="Render 1" data-src="pic/untitled.png"></div>
+            <div class="gallery-item"><img src="pic/untitled1.png" alt="Render 2" data-src="pic/untitled1.png"></div>
+            <div class="gallery-item"><img src="pic/untitled2.png" alt="Render 3" data-src="pic/untitled2.png"></div>
+            <div class="gallery-item"><img src="pic/untitled4.png" alt="Render 4" data-src="pic/untitled4.png"></div>
+            <div class="gallery-item"><img src="pic/untitled5.png" alt="Render 5" data-src="pic/untitled5.png"></div>
+            <div class="gallery-item"><img src="pic/untitled6.png" alt="Render 6" data-src="pic/untitled6.png"></div>
+            <div class="gallery-item"><img src="pic/corbin-1-car-image-pink.jpg" alt="Render 7" data-src="pic/corbin-1-car-image-pink.jpg"></div>
+            <div class="gallery-item"><img src="pic/corbin-2-car-image-pink.jpg" alt="Render 8" data-src="pic/corbin-2-car-image-pink.jpg"></div>
+            <div class="gallery-item"><img src="pic/corbin-3-car-image-pink.jpg" alt="Render 9" data-src="pic/corbin-3-car-image-pink.jpg"></div>
+            <div class="gallery-item"><img src="pic/corbin-4untitled.jpg" alt="Render 10" data-src="pic/corbin-4untitled.jpg"></div>
+            <div class="gallery-item"><img src="pic/corbin-5untitled.jpg" alt="Render 11" data-src="pic/corbin-5untitled.jpg"></div>
+            <br><div class="gallery-item"><img src="pic/corbin-2.jpg" alt="Render 12" data-src="pic/corbin-2.jpg"></div>
+            <div class="gallery-item"><img src="pic/corbin-3.jpg" alt="Render 13" data-src="pic/corbin-3.jpg"></div>
+            <div class="gallery-item"><img src="pic/corbin-5.jpg" alt="Render 14" data-src="pic/corbin-5.jpg"></div>
+            <div class="gallery-item"><img src="pic/corbin-6.jpg" alt="Render 15" data-src="pic/corbin-6.jpg"></div>
+            <div class="gallery-item"><img src="pic/corbin-7.jpg" alt="Render 16" data-src="pic/corbin-7.jpg"></div>
+            <div class="gallery-item"><img src="pic/corbin-8.jpg" alt="Render 17" data-src="pic/corbin-8.jpg"></div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img" src="">
         </div>
     </div>
 
     <script>
-        // Fade-in effect on page load
         window.addEventListener('load', () => {
             document.querySelector('.main').classList.add('show');
         });
 
-        // Fade-out effect on navigation
         document.querySelectorAll('.navbar ul li a').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent immediate navigation
+                e.preventDefault();
                 const target = this.getAttribute('href');
 
-                // Remove show class to fade out
                 document.querySelector('.main').classList.remove('show');
-                document.querySelector('.main').classList.add('fade-out'); // Apply fade-out class
+                document.querySelector('.main').classList.add('fade-out');
 
                 setTimeout(() => {
-                    window.location.href = target; // Navigate to the target page after fade-out
-                }, 500); // Match the delay to CSS transition duration
+                    window.location.href = target;
+                }, 500);
             });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const galleryItems = document.querySelectorAll(".gallery-item img");
+
+        galleryItems.forEach(item => {
+            item.addEventListener("click", () => {
+                lightbox.style.display = "block";
+                lightboxImg.src = item.getAttribute("data-src");
+            });
+        });
+
+        document.querySelector(".close").addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
         });
     </script>
 </body>
