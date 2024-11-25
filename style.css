@@ -8,6 +8,7 @@
     background: url(pic/1.webp);
     background-position: center;
     background-size: cover;
+    background: transparent;
     height: 100vh;
     position: relative;
     font-family: sans-serif;
@@ -88,6 +89,32 @@ ul li a:hover {
     background: rgb(0, 0, 0);
 }
 
+.info-index {
+    background-color: rgba(50, 50, 50, 0.9); /* Dark grey background with slight transparency */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    width: 60%; /* Adjust width as needed */
+    margin: 20px 0 20px 5%; /* Move the box to the left by adjusting the left margin */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.info-index h1 {
+    font-size: 50px;
+    color: #000000; /* White text */
+}
+
+.info-index h3 {
+    font-size: 18px;
+    color: #f0f0f0; /* Slightly off-white for readability */
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+.info-index span {
+    color: #ffffff; /* Gold accent color for emphasis */
+}
+
+
 .image {
     width: 30%;
     height: 60%;
@@ -107,6 +134,31 @@ ul li a:hover {
 
 .image:hover .Corbin {
     left: 55%;
+}
+
+.info-box {
+    background-color: rgba(50, 50, 50, 0.9); /* Dark grey background with slight transparency */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    width: 80%; /* Adjust width as needed */
+    margin: 20px auto; /* Center the box and add some spacing */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.info-color {
+    font-size: 50px;
+    color: #000000; /* White text for contrast */
+}
+
+.info-color h3 {
+    font-size: 18px;
+    color: #f0f0f0; /* Slightly off-white for readability */
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+.info-color span {
+    color: #ffffff; /* Gold accent color for "A" and "M" */
 }
 
 .icons i {
@@ -235,6 +287,7 @@ ul li a.active {
 }
 body {
     background: url(pic/1.webp) center center / cover no-repeat fixed;
+    background-size: cover;
     margin: 0;
     font-family: sans-serif;
 }
@@ -244,4 +297,70 @@ gallery h3 {
     font-size: 24px;
     color: #ffffff; /* Adjust color to suit your theme */
     text-align: center;
+}
+
+.about-image img {
+    position: absolute;
+    height: 140%;
+    left: 70%; /* Adjust specifically for this image */
+    transform: translate(-50%);
+    bottom: -10%;
+    transition: left 2s ease;
+}
+.info-skills {
+    background-color: rgba(50, 50, 50, 0.9); /* Dark grey background with slight transparency */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    width: 80%; /* Adjust width as needed */
+    margin: 20px auto; /* Center the box and add some spacing */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    color: #ffffff; /* Text color for contrast */
+}
+
+.info-skills h1 {
+    font-size: 50px;
+    color: #000000; /* White text for the heading */
+    text-align: center; /* Center-align the heading */
+}
+
+.info-skills ul {
+    list-style-type: disc; /* Bullets for the list */
+    padding-left: 20px; /* Padding to align bullets */
+    margin-top: 10px ; /* Add spacing above the list */
+}
+
+.info-skills ul li {
+    margin: 5px 0; /* Space between bullet points */
+    color: #ffffff;
+    font-size: 18px; /* Adjust font size */
+    line-height: 1.8; /* Increase line height for readability */
+}
+.info-skills span {
+    color: #ffffff; /* Gold accent color for emphasis */
+}
+
+.info-contact {
+    background-color: rgba(50, 50, 50, 0.9); /* Dark grey background with slight transparency */
+    padding: 30px; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    width: 60%; /* Adjust width */
+    margin: 20px auto; /* Center horizontally with spacing around */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    color: #ffffff; /* White text for contrast */
+    text-align: center; /* Center-align text */
+}
+
+.info-contact h1 {
+    font-size: 40px;
+    color: #000000; /* White for heading text */
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+.info-contact span {
+    color: rgb(255, 255, 255); /* Gold color for emphasized letters */
+}
+
+.info-contact p {
+    font-size: 18px;
+    line-height: 1.8; /* Adjust line spacing for readability */
 }
