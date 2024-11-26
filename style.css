@@ -56,7 +56,7 @@ ul li a:hover {
 
 .info {
     margin-left: 7%;
-    margin-top: 6%;
+    margin-top: 2%;
 }
 
 .info h1 {
@@ -229,11 +229,15 @@ ul li a.active {
     color: #ffffff; /* Ensure text color is white for visibility */
 }
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible columns */
-    gap: 15px; /* Space between items */
-    padding: 20px;
-    margin-top: 20px;
+    background-color: rgba(50, 50, 50, 0.9); /* Light grey background with slight transparency */
+    padding: 20px; /* Add padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px auto; /* Center the gallery and add spacing */
+    width: 90%; /* Adjust width to fit the layout */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    display: grid; /* Use grid layout for the gallery */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 15px; /* Spacing between grid items */
 }
 
 .gallery-item {
@@ -243,14 +247,14 @@ ul li a.active {
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover; /* Crop images to fit the grid item */
+    width: 100%; /* Ensure images take up the full width of their container */
+    height: auto; /* Maintain image aspect ratio */
+    border-radius: 5px; /* Optional: Add slight rounding to images */
+    transition: transform 0.3s ease; /* Add a smooth hover effect */
 }
 
-.gallery-item:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+.gallery-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .lightbox {
@@ -363,4 +367,87 @@ gallery h3 {
 .info-contact p {
     font-size: 18px;
     line-height: 1.8; /* Adjust line spacing for readability */
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Slides */
+.slide {
+    display: none;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+.slide.active {
+    display: block;
+    opacity: 1;
+}
+.slide img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+}
+/* Add fade effect to slides */
+.slide.fade {
+    opacity: 0; /* Start with fully transparent */
+    transition: opacity 1.5s ease-in-out; /* Smooth fade effect over 1.5 seconds */
+}
+.slide:first-child {
+    display: block; /* Show the first slide */
+}
+.slide.fade.active {
+    opacity: 1; /* Fully visible when active */
+}
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    z-index: 100;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.dots-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.dot {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+.fade {
+    transition: opacity 1s ease-in-out;
 }
