@@ -1,28 +1,41 @@
 
-let slideIndex = 1;  // Start from the first slide
-showSlide(slideIndex);
+let slideIndex = 0;
+    showSlides();
 
-function changeSlide(n) {
-    showSlide(slideIndex += n);
-}
+    function showSlides() {
+        let slides = document.querySelectorAll(".slide");
+        let dots = document.querySelectorAll(".dot");
 
-function setSlide(n) {
-    showSlide(slideIndex = n);
-}
+        slides.forEach((slide, index) => {
+            slide.style.display = "none";
+        });
 
-function showSlide(n) {
-    let slides = document.querySelectorAll('.slide');
-    let dots = document.querySelectorAll('.dot');
-    
-    // Wrap the slide index if it exceeds the number of slides
-    if (n > slides.length) { slideIndex = 1; }
-    if (n < 1) { slideIndex = slides.length; }
-    
-    // Hide all slides and remove active class from all dots
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    // Show the active slide and set the active dot
-    slides[slideIndex - 1].classList.add('active');
-    dots[slideIndex - 1].classList.add('active');
-}
+        slideIndex++;
+        if (slideIndex > slides.length) slideIndex = 1;
+
+        dots.forEach((dot) => dot.classList.remove("active"));
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+
+        setTimeout(showSlides, 3000); // Change slide every 3 seconds
+    }
+
+    // Navigation Controls
+    document.querySelector(".prev").addEventListener("click", () => changeSlide(-1));
+    document.querySelector(".next").addEventListener("click", () => changeSlide(1));
+
+    function changeSlide(n) {
+        slideIndex += n;
+        if (slideIndex > document.querySelectorAll(".slide").length) slideIndex = 1;
+        if (slideIndex < 1) slideIndex = document.querySelectorAll(".slide").length;
+
+        showSlides();
+    }
+
+    // Dot Indicators
+    document.querySelectorAll(".dot").forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            slideIndex = index + 1;
+            showSlides();
+        });
+    });

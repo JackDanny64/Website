@@ -236,7 +236,7 @@ ul li a.active {
     width: 90%; /* Adjust width to fit the layout */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     display: grid; /* Use grid layout for the gallery */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns for images */
     gap: 15px; /* Spacing between grid items */
 }
 
@@ -256,7 +256,12 @@ ul li a.active {
 .gallery-item img:hover {
     transform: scale(1.05); /* Slight zoom effect on hover */
 }
-
+.gallery-text h3 {
+    font-size: 18px;
+    color: #f0f0f0; /* Slightly off-white for readability */
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
 .lightbox {
     display: none;
     position: fixed;
